@@ -1,11 +1,11 @@
-export default function Todo({text,completed,completetodo,onToggle,deletetodo}) {
+export default function Todo({text,completed,onToggle,deletetodo}) {
     return (
         <>
             <li className={completed ? "completed" : ""}>
                 <div className="view">
                     <input
                         className="toggle" type="checkbox"
-                        checked={completetodo}
+                        checked={completed}
                         onChange={onToggle}
                     />
                     <label>{text}</label>

@@ -1,6 +1,5 @@
 import './App.css'
 import Footer from './components/Footer'
-import Header from './components/Header'
 import TodoList from './components/TodoList'
 
 function App() {
@@ -8,13 +7,8 @@ function App() {
 
   return (
     <>
-     <section class="todoapp">
-      <Header/>
-
+     <section className="todoapp">
       <TodoList/>
-
-	    <Footer/>
-
     </section>
     </>
   )

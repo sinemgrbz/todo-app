@@ -1,25 +1,27 @@
-export default function Footer() {
+export default function Footer({todoList,clearCompleted,setFilter }) {
+
+    const remainingCount = todoList.filter(todo => !todo.completed).length; 
+
     return (
         <>
-        <footer class="footer">
-            <span class="todo-count">
-                <strong>2</strong>
-                items left
+        <footer className="footer">
+            <span className="todo-count">
+                <strong>{remainingCount}</strong> items left
             </span>
 
-            <ul class="filters">
+            <ul className="filters">
                 <li>
-                    <a href="#/" class="selected">All</a>
+                    <a href="#/" onClick={() => setFilter('all')} className="selected">All</a>
                 </li>
                 <li>
-                    <a href="#/">Active</a>
+                    <a href="#/" onClick={() => setFilter('active')} >Active</a>
                 </li>
                 <li>
-                    <a href="#/">Completed</a>
+                    <a href="#/" onClick={() => setFilter('completed')}>Completed</a>
                 </li>
             </ul>
 
-            <button class="clear-completed">
+            <button className="clear-completed" onClick={clearCompleted}>
                 Clear completed
             </button>
 	    </footer>
